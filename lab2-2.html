@@ -28,7 +28,7 @@
     <title>Apply Loan</title>
     <style>
         body {
-            background-image: url('glitter.png'); /* Add a glitter background image */
+            background-image: url('c:\Users\ADMIN\Desktop\SE2134\sparkles-stars.gif'); /* Add a glitter background image */
             background-size: cover;
             background-repeat: repeat;
             font-family: 'Arial', sans-serif;
@@ -36,6 +36,7 @@
             justify-content: center;
             align-items: center;
             height: 100vh; /* Center the form vertically */
+            margin: 0; /* Remove default body margin */
         }
 
         form {
@@ -44,6 +45,10 @@
             border-radius: 10px;
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
             max-width: 400px; /* Limit the form width */
+        }
+
+        h1 {
+            text-align: center; /* Center the title */
         }
 
         input[type="text"], textarea {
@@ -74,6 +79,7 @@
 </head>
 <body>
     <form action="/apply-loan-success" method="post">
+        <h1>Loan Form</h1> <!-- Title added here -->
         Name: <input type="text" name="name"><br>
         Email: <input type="text" name="email"><br>
         Phone: <input type="text" name="phone"><br>
