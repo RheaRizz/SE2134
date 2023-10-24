@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!-- <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -6,7 +6,7 @@
     <title>Apply Loan</title>
 </head>
 <body>
-    <form action="/apply-loan-success">
+    <form action="/apply-loan-success" method="post"> 
         Name: <input type="text" name="name"><br>
         Email: <input type="text" name="email"><br>
         Phone: <input type="text" name="phone"><br>
@@ -18,5 +18,71 @@
         <button type="submit">Submit</button>
       </form>
 </body>
-</html>
+</html> -->
 
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Apply Loan</title>
+    <style>
+        body {
+            background-image: url('glitter.png'); /* Add a glitter background image */
+            background-size: cover;
+            background-repeat: repeat;
+            font-family: 'Arial', sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh; /* Center the form vertically */
+        }
+
+        form {
+            background-color: rgba(255, 255, 255, 0.9); /* Semi-transparent white background */
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+            max-width: 400px; /* Limit the form width */
+        }
+
+        input[type="text"], textarea {
+            width: 100%;
+            padding: 10px;
+            margin: 5px 0;
+            border: 2px solid #ff80b3; /* Pink border */
+            border-radius: 5px;
+        }
+
+        input[type="checkbox"] {
+            margin-left: 5px;
+        }
+
+        button {
+            background-color: #ff80b3; /* Pink button background */
+            color: #fff;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #ff66a3; /* Slightly darker pink on hover */
+        }
+    </style>
+</head>
+<body>
+    <form action="/apply-loan-success" method="post">
+        Name: <input type="text" name="name"><br>
+        Email: <input type="text" name="email"><br>
+        Phone: <input type="text" name="phone"><br>
+        Loan Amount: <input type="text" name="loan_amount"><br>
+        Reason: <textarea name="reason"></textarea><br>
+      
+        <label><input type="checkbox" name="agree">I agree to the terms and conditions</label><br>
+      
+        <button type="submit">Submit</button>
+    </form>
+</body>
+</html>
