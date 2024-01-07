@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Message Sender</title>
+</head>
+<body>
+  <form id="messageForm">
+    <textarea id="messageContent" rows="4" cols="50"></textarea><br>
+    <input type="button" value="Send" onclick="sendMessage()">
+  </form>
+
+  <script>
+    function sendMessage() {
+      const content = document.getElementById('messageContent').value;
+      const animalIdentity = 'dog'; 
+      const colorIdentity = 'blue'; 
+
+      fetch('http://localhost:3000/send-message', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({ content, animalIdentity, colorIdentity }),
+      })
+      .then(response => response.json())
+      .then(data => {
+        console.log('Message sent:', data);
+        
+      })
+      .catch(error => console.error('Error sending message:', error));
+    }
+  </script>
+</body>
+</html>
