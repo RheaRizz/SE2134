@@ -1,0 +1,16 @@
+
+Understand why readFileSync won't work on a web app with tons of users
+Read/write files properly with asynchrounous non-blocking code, show 3 solutions:
+callbacks
+Promise chains (.then(), .catch())
+async/await
+
+
+
+Why does readFileSync won't work on a web app with tons of users?
+
+- The readFileSync is a synchronous function that reads files in Node.js. Synchronous operations actually block code executions until they are completed. In a web app with a lot of users, synchronous operations might lead to problems because it blocks the execution thread. This leads to performance malfunctions and issues also increased response times. As a result, using readFileSync in a web app with a ton of users will cause delays and reduce the app's responsiveness.
+
+
+- However, we can fix this by using an asynchronous non-blocking code in TS/JS. We can use these three solutions demonstrated on lab1.ts. These are: callbacks, promise chains and async/await.
+

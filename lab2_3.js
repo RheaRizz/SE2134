@@ -1,12 +1,13 @@
 
 
 const http = require('http');
-const { Pool } = require('pg');
-const fs = require('fs'); // read HTML file
-const { URLSearchParams } = require('url'); 
-// parse and handle form data from HTTP POST requests.
 
-// Create a PostgreSQL database connection pool
+const { Pool } = require('pg');
+
+const fs = require('fs'); // read HTML file
+
+const { URLSearchParams } = require('url'); 
+
 const pool = new Pool({
 
   user: 'postgres',
@@ -18,18 +19,21 @@ const pool = new Pool({
 });
 
 async function handleRequest(request, response) {
+
   const url = request.url;
   const method = request.method;
 
-  // ...
 
 if (url === '/apply-loan-success' && method === 'POST') {
+
   let body = '';
   request.on('data', (chunk) => {
     body += chunk.toString();
+
   });
 
   request.on('end', async () => {
+    
     try {
       const formData = new URLSearchParams(body);
       const name = formData.get('name');
@@ -76,7 +80,7 @@ if (url === '/apply-loan-success' && method === 'POST') {
   });
 }
 
-// ...
+
 
 }
 
@@ -84,4 +88,5 @@ const server = http.createServer(handleRequest);
 
 server.listen(3000, () => {
   console.log('Server started at http://localhost:3000');
+  
 });

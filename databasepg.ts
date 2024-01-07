@@ -1,34 +1,12 @@
 
 
-// import { Client } from 'pg';
-
-// const client = new Client({
-
-//     host: "localhost",
-//     user: "postgres",
-//     port: 5433,
-//     password: "1234",
-//     database: "SE2134"
-// });
-
-// client.connect();
-
-// client.query(`Select * from loan`, (err, res) => {
-
-//     if (!err) {
-//         console.log(res.rows);
-//     } else {
-//         console.log(err.message);
-//     }
-//     client.end(); // Note: You should call the `end` method as a function, like this.
-// });
-
 import * as http from 'http';
 import { Pool, PoolClient } from 'pg';
 import * as fs from 'fs';
 import { URLSearchParams } from 'url';
 
-// Create a PostgreSQL database connection pool
+// To create a database connection pool
+
 const pool = new Pool({
 
   user: 'postgres',
