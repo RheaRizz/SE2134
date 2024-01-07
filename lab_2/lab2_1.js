@@ -38,7 +38,7 @@ var __generator = (this && this.__generator) || function (thisArg, body) {
 Object.defineProperty(exports, "__esModule", { value: true });
 var http = require("http");
 var fs = require("fs");
-function handleRequest(request, response) {
+function handleRequest(request, _response) {
     return __awaiter(this, void 0, void 0, function () {
         var url, method, server, PORT;
         return __generator(this, function (_a) {
@@ -46,7 +46,7 @@ function handleRequest(request, response) {
             method = request.method;
             console.log('Debugging -- url is', url, 'while method is', method);
             server = http.createServer(function (req, res) {
-                if (req.url === '/apply-loan') {
+                if (req.url === '/apply-loan-success') {
                     fs.readFile('lab2-2.html', function (err, data) {
                         if (err) {
                             res.writeHead(500, { 'Content-Type': 'text/plain' });
